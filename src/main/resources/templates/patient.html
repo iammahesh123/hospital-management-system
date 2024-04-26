@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Patient profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #333;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #4caf50;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        .alert {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .alert-success {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .alert-danger {
+            background-color: #f44336;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<hr>
+<h1>HOSPITAL SWERISIE</h1>
+<hr>
+<p>Hello! <span th:text ="${username}"></span></p>
+<form action="#" th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout">
+</form>
+<hr>
+<a th:href="@{patients/myAppointments}">View Appointments</a>
+<a th:href="@{/viewPrescription}">View Prescriptions</a>
+<a th:href="@{patients/cancelAppointment}">Cancel Appointment</a>
+<hr>
+<hr>
+<p>Schedule your visit by booking an appointment: <a th:href="@{/add}">Book Appointment</a></p>
+<div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"></div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Appointments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Powder Blue */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f0f0f0; /* Light Gray */
+        }
+
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        td:nth-child(odd) {
+            background-color: #f2f2f2; /* Light Gray */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>HOSPITAL SWERSIE</h1>
+    <hr>
+    <a th:href="@{/receptionist}">Homepage</a>
+    <hr>
+    <p align="center">Schedules</p>
+    <br>
+    <hr>
+    <table>
+        <caption>Schedules</caption>
+        <tr>
+            <th>Doctor Name</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Start</th>
+            <th>Finish</th>
+        </tr>
+        <tr th:each="event : ${events}">
+            <td th:text="${event.name}"></td>
+            <td th:text="${event.title}"></td>
+            <td th:text="${event.description}"></td>
+            <td th:text="${event.start}"></td>
+            <td th:text="${event.finish}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
