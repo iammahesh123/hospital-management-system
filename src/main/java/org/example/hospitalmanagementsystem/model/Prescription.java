@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 @Table(name = "prescription")
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Prescription {
 
     @Id
@@ -23,7 +22,7 @@ public class Prescription {
     private String patientName;
 
     @Column(name = "appointment_Id")
-    private String appointmentId;
+    private Integer appointmentId;
 
     @Column(name = "description")
     private String description;

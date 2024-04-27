@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 @Table(name = "appointment")
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Appointment {
 
     @Id

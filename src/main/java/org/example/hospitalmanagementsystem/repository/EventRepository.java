@@ -9,15 +9,15 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
-public interface EventRepository extends JpaRepository<Event,Long> {
-    public List<Event> findByStartGreaterThanEqualAndFinishLessThanEqual(LocalDateTime start, LocalDateTime end);
+public interface EventRepository extends JpaRepository<Event, Long> {
 
-    public List<Event> findByName(String name);
-
-    public List<Event> findByStart(LocalDateTime start);
-
-
-    @Query("select b from Event b where b.start >= ?1 and b.finish <= ?2")
-    public List<Event> findByDateBetween(LocalDateTime start, LocalDateTime end);
+//    public List<Event> findByStartGreaterThanEqualAndFinishLessThanEqual(LocalDateTime start, LocalDateTime end);
+//
+//    public List<Event> findByTitle(String title);
+//
+   public List<Event> findByStart(LocalDateTime start);
+//
+//    @Query("select b from Event b where b.start >= ?1 and b.end <= ?2")
+//    public List<Event> findByDateBetween(LocalDateTime start, LocalDateTime end);
 
 }
